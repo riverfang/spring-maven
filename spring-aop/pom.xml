@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-framework</artifactId>
+        <groupId>cn.com.riverfang</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>spring-aop</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!--spring-aop 依赖本地工程模块有：
+          spring-core,spring-beans
+        -->
+        <dependency>
+            <groupId>cn.com.riverfang</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.riverfang</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- 当前模块所需要的第三方依赖 -->
+        <dependency>
+            <groupId>com.jamonapi</groupId>
+            <artifactId>jamon</artifactId>
+            <version>${jamon.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>${commons.pool2.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectjweaver.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+
+</project>

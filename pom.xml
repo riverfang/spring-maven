@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.com.riverfang</groupId>
+    <artifactId>spring-framework</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <properties>
+        <!--
+            依赖第三方jar包的版本在父工程下统一管理
+         -->
+        <!-- spring-mvc -->
+        <jackson.version>2.9.7</jackson.version>
+        <openpdf.version>1.2.2</openpdf.version>
+        <rome.version>1.11.0</rome.version>
+        <javax.el.version>3.0.1-b04</javax.el.version>
+        <javax.servlet.jsp>2.3.2-b02</javax.servlet.jsp>
+        <javax.servlet.jstl>1.2.1</javax.servlet.jstl>
+        <jaxb.version>2.3.0</jaxb.version>
+        <poi.version>3.17</poi.version>
+        <tiles.version>3.0.8</tiles.version>
+        <freemark.version>2.3.28</freemark.version>
+        <groovy.version>2.5.2</groovy.version>
+        <kotlin.version>1.2.70</kotlin.version>
+        <reactivestreams.version>1.0.2</reactivestreams.version>
+        <webjars.version>0.35</webjars.version>
+        <!-- /spring-mvc -->
+
+        <!-- spring-beans -->
+        <javax.inject.version>1</javax.inject.version>
+        <!-- groovy,kotlin版本同spring-mvc下 -->
+        <snakeymal.version>1.23</snakeymal.version>
+        <!-- /spring-beans -->
+
+        <!-- spring-core -->
+        <netty.version>4.1.29.Final</netty.version>
+        <projectreactor.version>3.2.0.RELEASE</projectreactor.version>
+        <rxjava>1.3.8</rxjava>
+        <rxjava2>2.2.2</rxjava2>
+        <rxjava.reactive>1.2.1</rxjava.reactive>
+        <jopt.simple.version>5.0.4</jopt.simple.version>
+        <!-- kotlin-reflect,kotlin-stdlib版本同spring-mvc下 -->
+        <aspectjweaver.version>1.9.1</aspectjweaver.version>
+        <!-- /spring-core -->
+
+        <!-- spring-jcl -->
+        <log4j.version>2.11.1</log4j.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <!-- /spring-jcl -->
+
+        <!-- spring-aop -->
+        <jamon.version>2.81</jamon.version>
+        <!-- aspectj版本同spring-core下 -->
+        <commons.pool2.version>2.6.0</commons.pool2.version>
+        <!-- /spring-aop -->
+
+        <!-- spring-aspects -->
+        <cache.version>1.1.0</cache.version>
+        <!-- aspectj版本同spring-core下 -->
+        <javax.transaction.version>1.3</javax.transaction.version>
+        <!-- /spring-aspects -->
+
+        <!-- spring-context -->
+        <javax.annotation.version>1.3.2</javax.annotation.version>
+        <javax.ejb.version>3.2</javax.ejb.version>
+        <javax.concurrent.version>1.0</javax.concurrent.version>
+        <!-- inject版本同spring-beans下 -->
+        <!-- groovy,kotlin版本同spring-mvc下 -->
+        <!-- kotlin-reflect,kotlin-stdlib,aspectj版本同spring-core下-->
+        <javax.interceptor.version>1.2.2</javax.interceptor.version>
+        <javax.validation.version>1.1.0.Final</javax.validation.version>
+        <javax.xml.ws.version>2.3.0</javax.xml.ws.version>
+        <money.version>1.0.3</money.version>
+        <joda.time.version>2.10</joda.time.version>
+        <bsh.version>2.0b5</bsh.version>
+        <hibernate.validator.version>5.4.2.Final</hibernate.validator.version>
+        <!-- /spring-context -->
+
+        <!-- spring-context-indexer -->
+        <!-- 无第三方依赖 -->
+        <!-- /spring-context-indexer -->
+
+        <!-- spring-context-support -->
+        <caffeine.version>2.6.2</caffeine.version>
+        <javax.activation.version>1.2.0</javax.activation.version>
+        <!-- cache版本同spring-aspects下 -->
+        <!-- freemark版本同spring-mvc下 -->
+        <javax.mail.version>1.6.2</javax.mail.version>
+        <ehcache.version>2.10.4</ehcache.version>
+        <commonj.version>1.1.0</commonj.version>
+        <quartz.version>2.3.0</quartz.version>
+        <!-- spring-context-support -->
+
+        <!-- spring-expression -->
+        <!-- 无第三方依赖 -->
+        <!-- /spring-expression -->
+
+        <!-- spring-instrument -->
+        <!-- 无第三方依赖 -->
+        <!-- /spring-instrument -->
+
+        <!-- spring-jdbc -->
+        <h2.version>1.4.197</h2.version>
+        <!-- javax.transaction版本同spring-aspects下 -->
+        <!-- kotlin版本同spring-mvc下 -->
+        <derby.version>10.14.2.0</derby.version>
+        <hsqldb.version>2.4.1</hsqldb.version>
+        <!-- /spring-jdbc -->
+
+        <!-- spring-jms -->
+        <javax.resource.version>1.7.1</javax.resource.version>
+        <!-- javax.transaction版本同spring-aspects下 -->
+        <!-- jackson版本同spring-mvc下 -->
+        <!-- /spring-jms -->
+
+        <!-- spring-messaging -->
+        <reactor.netty.version>0.8.0.RELEASE</reactor.netty.version>
+        <!-- jackson,jaxb版本同spring-mvc下 -->
+        <websocket.version>9.4.12.v20180830</websocket.version>
+        <!-- /spring-messaging -->
+
+        <!-- spring-orm -->
+        <javax.servlet.version>3.1.0</javax.servlet.version>
+        <eclipse.jpa.version>2.7.3</eclipse.jpa.version>
+        <hibernate.core.version>5.3.6.Final</hibernate.core.version>
+        <!-- /spring-orm -->
+
+        <!-- spring-oxm -->
+        <xstream.version>1.4.10</xstream.version>
+        <!-- javax.activation版本同spring-context-support下 -->
+        <!-- jaxb版本同spring-mvc下 -->
+        <castor.xml.version>1.4.1</castor.xml.version>
+        <jibx.run.version>1.3.1</jibx.run.version>
+        <!-- /spring-oxm -->
+
+        <!-- spring-test -->
+        <json.path.version>2.4.0</json.path.version>
+        <!-- projectreactor,aspectj版本同spring-core下-->
+        <!-- javax.activation版本同spring-context-support下 -->
+        <!-- inject版本同spring-beans下 -->
+        <!-- jsp,jstl,jaxb,groovy,kotlin版本同spring-mvc下 -->
+        <javax.servlet2.version>4.0.1</javax.servlet2.version>
+        <javax.websocket.version>1.1</javax.websocket.version>
+        <junit.version>4.12</junit.version>
+        <htmlunit.version>2.33</htmlunit.version>
+        <taglibs.version>1.2.5</taglibs.version>
+        <hamcrest.version>1.3</hamcrest.version>
+        <jupiter.version>5.3.1</jupiter.version>
+        <htmlunit.driver.version>2.32.1</htmlunit.driver.version>
+        <selenium.version>3.14.0</selenium.version>
+        <jsonassert.version>1.5.0</jsonassert.version>
+        <testng.version>6.14.3</testng.version>
+        <xmlunit.matchers.version>2.6.2</xmlunit.matchers.version>
+        <!-- /spring-test -->
+
+        <!-- spring-tx -->
+        <uow.version>6.0.2.17</uow.version>
+        <!-- javax.ejb,javax.interceptor版本同spring-context下 -->
+        <!-- javax.transaction版本同spring-aspects下 -->
+        <!-- javax.resource版本同spring-jms下 -->
+        <!-- /spring-tx -->
+
+        <!-- spring-web -->
+        <hessian.version>4.0.51</hessian.version>
+        <aalto.xml.version>1.1.0</aalto.xml.version>
+        <!-- jackson,rome,jsp,jaxb,groovy,kotlin版本同spring-mvc下 -->
+        <!-- netty,rxjava版本同spring-core下 -->
+        <!-- reactor-netty版本同spring-messaging下 -->
+        <!-- javax.mail版本同spring-context-support下 -->
+        <!-- javax.validation,javax.xml.ws版本同spring-context下 -->
+        <!-- javax.servlet版本同spring-orm下 -->
+        <woodstox.version>5.1.0</woodstox.version>
+        <gson.version>2.8.5</gson.version>
+        <protobuf.version>3.6.1</protobuf.version>
+        <protobuf.java.format.version>1.4</protobuf.java.format.version>
+        <okhttp.version>3.11.0</okhttp.version>
+        <fileupload.version>1.3.3</fileupload.version>
+        <undertow.version>2.0.13.Final</undertow.version>
+        <javax.faces.version>2.2</javax.faces.version>
+        <javax.json.bind.version>1.0</javax.json.bind.version>
+        <httpasyncclient.version>4.1.4</httpasyncclient.version>
+        <httpclient.version>4.5.6</httpclient.version>
+        <tomcat.embed.version>9.0.12</tomcat.embed.version>
+        <jetty.reactive.httpclient.version>1.0.1</jetty.reactive.httpclient.version>
+        <jetty.version>9.4.12.v20180830</jetty.version>
+        <javax.jws.version>4.0-b33</javax.jws.version>
+        <nio.multipart.parser.version>1.1.0</nio.multipart.parser.version>
+        <!-- /spring-web -->
+
+        <!-- spring-webflux -->
+        <!-- jackson,freemark,kotlin,webjars版本同spring-mvc下 -->
+        <!-- protobuf,undertow版本同spring-web下 -->
+        <!-- projectreactor,rxjava版本同spring-core下 -->
+        <!-- reactor-netty版本同spring-messaging下 -->
+        <!-- javax.servlet版本同spring-test下 -->
+        <!-- /spring-webflux -->
+
+        <!-- spring-websocket -->
+        <tomcat.websocket.version>9.0.12</tomcat.websocket.version>
+        <!-- jackson版本同spring-mvc下 -->
+        <!-- undertow,jetty版本同spring-web下 -->
+        <!-- javax.servlet,javax.websocket版本同spring-test下 -->
+        <tyrus.container.servlet.version>1.13.1</tyrus.container.servlet.version>
+        <!-- /spring-websocket -->
+
+
+    </properties>
+    <modules>
+        <module>spring-aop</module>
+        <module>spring-beans</module>
+        <module>spring-context</module>
+        <module>spring-context-indexer</module>
+        <module>spring-context-support</module>
+        <module>spring-core</module>
+        <module>spring-expression</module>
+        <module>spring-instrument</module>
+        <module>spring-jdbc</module>
+        <module>spring-jms</module>
+        <module>spring-messaging</module>
+        <module>spring-orm</module>
+        <module>spring-oxm</module>
+        <module>spring-test</module>
+        <module>spring-tx</module>
+        <module>spring-web</module>
+        <module>spring-webflux</module>
+        <module>spring-webmvc</module>
+        <module>spring-websocket</module>
+        <module>spring-jcl</module>
+        <module>learn-web</module>
+        <module>learn-spring</module>
+        <module>learn-spring</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <encoding>utf-8</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.4</version>
+                        <configuration>
+                            <attach>true</attach>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*</include>
+                    <include>**/*</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                    <include>**/*</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
+
+</project>
